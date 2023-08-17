@@ -34,8 +34,8 @@ public class BookMenu {
     public List<BookDTO> selectSortedBook() {
         sc = new Scanner(System.in);
         System.out.print("원하는 정렬방식을 선택해주세요 : ");
-        System.out.println("1. 책 번호 기준으로 오름차순");
-        System.out.println("2. 책 번호 기준으로 내림차순");
+        System.out.println("1. 도서번호(ISBN) 기준으로 오름차순");
+        System.out.println("2. 도서번호(ISBN) 기준으로 내림차순");
         System.out.println("3. 책 제목 기준으로 오름차순");
         System.out.println("4. 책 제목 기준으로 내림차순");
         try {
