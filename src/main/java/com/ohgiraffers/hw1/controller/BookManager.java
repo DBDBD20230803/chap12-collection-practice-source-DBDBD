@@ -20,6 +20,9 @@ public class BookManager {
     }
 
     public void deleteBook(int index) {
+        if (index != 0) {
+            index--;
+        }booklist.remove(index);
 
     }
 

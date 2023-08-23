@@ -31,7 +31,7 @@ public class BookMenu {
         System.out.print("도서 번호 : " );
         System.out.println("삭제할 도서의 번호를 입력해 주세요");
 
-        return sc.nextInt();
+        return null;
     }
 
     public String inputBookTitle() {
