@@ -15,7 +15,7 @@ public class BookManager {
 
     }
 
-    public void addBook(Book book) {
+    public void addBook(BookDTO book) {
 
     }
 
@@ -24,7 +24,21 @@ public class BookManager {
     }
 
     public void searchBook(String btitle) {
-        /* 내가 해야 할 부분 */
+
+        int result = -1;
+
+        for (int i = 0; i < booklist.size(); i++) {
+            if(booklist.get(i).getTitle().equals(btitle)) {
+                result = i;
+                break;
+            }
+        }
+
+        if(result > -1) {
+            System.out.println(booklist.get(result));
+        } else {
+            System.out.println("조회된 도서가 목록에 없습니다.");
+        }
     }
 
     public void displayAll() {
