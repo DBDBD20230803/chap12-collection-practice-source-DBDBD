@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class BookMenu {
     private Scanner sc = new Scanner(System.in);
-    private BookManager bm;
+    private BookManager bm  = new BookManager();
 
     public BookMenu() {
 
@@ -43,7 +43,22 @@ public class BookMenu {
 
     public BookDTO inputBook() {
 
-        return null;
+        System.out.print("도서번호(ISBN) : ");
+        int bNo = sc.nextInt();
+
+        System.out.print("카테고리 입력(1:인문/ 2:자연과학/3:의료/ 4:기타) : ");
+        int category = sc.nextInt();
+
+
+        System.out.print("도서 제목 : ");
+        sc.nextLine();
+        String bTitle = sc.nextLine();
+
+        System.out.print("저자 : ");
+        String author = sc.nextLine();
+
+
+        return new BookDTO(bNo, category, bTitle, author);
     }
 
 

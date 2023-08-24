@@ -14,13 +14,16 @@ import java.util.Scanner;
 
 public class BookManager {
     private ArrayList<BookDTO> booklist;
-    private Scanner sc;
 
     public BookManager() {
-
+booklist = new ArrayList<BookDTO>();
     }
+    private Scanner sc;
+
+
 
     public void addBook(BookDTO book) {
+        booklist.add(book);
 
     }
 
