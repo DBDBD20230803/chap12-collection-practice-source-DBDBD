@@ -25,6 +25,10 @@ public class BookManager {
     }
 
     public void deleteBook(int index) {
+        if(index != 0) {
+            index--;
+        }
+        booklist.remove(index);
 
     }
 
@@ -47,7 +51,6 @@ public class BookManager {
     }
 
     public void displayAll() {
-        // 도서목록 전체 출력
 
         if (booklist.size() > 0) {
             for (BookDTO bookDTO : booklist) {
@@ -65,6 +68,9 @@ public class BookManager {
     }
 
     public void printBookList(List<BookDTO> printList) {
+        for (BookDTO book : printList) {
+            System.out.println(book);
+        }
 
     }
 }
