@@ -77,14 +77,10 @@ public class BookMenu {
         sc.nextLine();
         String btitle = sc.nextLine();
 
-        System.out.println("inputBookTitle btitle : " + btitle);
-
         return btitle;
     }
 
     public List<BookDTO> selectSortedBook() {
-        bm = new BookManager();
-        sc = new Scanner(System.in);
         System.out.println("1. 도서번호(ISBN) 기준으로 오름차순");
         System.out.println("2. 도서번호(ISBN) 기준으로 내림차순");
         System.out.println("3. 책 제목 기준으로 오름차순");
@@ -92,8 +88,8 @@ public class BookMenu {
         System.out.print("원하는 정렬방식을 선택해주세요 : ");
         try {
             int num = sc.nextInt();
-            List<BookDTO> bookList = bm.sortedBookList(num);
-            return bookList;
+            List<BookDTO> booklist = bm.sortedBookList(num);
+            return booklist;
         } catch (InputMismatchException e) {
             System.out.println("잘못된 입력입니다.");
         }

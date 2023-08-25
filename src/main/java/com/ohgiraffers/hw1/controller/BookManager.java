@@ -3,10 +3,9 @@ package com.ohgiraffers.hw1.controller;
 import com.ohgiraffers.hw1.comparator.AscBookNo;
 import com.ohgiraffers.hw1.comparator.AscBookTitle;
 import com.ohgiraffers.hw1.comparator.DescBookNo;
-import com.ohgiraffers.hw1.comparator.DescBookTItle;
+import com.ohgiraffers.hw1.comparator.DescBookTitle;
 import com.ohgiraffers.hw1.model.dto.BookDTO;
 
-import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,8 +36,6 @@ public class BookManager {
 
     public void searchBook(String btitle) {
 
-        System.out.println("searchBook btitle : " + btitle);
-
         int result = -1;
 
         for (int i = 0; i < booklist.size(); i++) {
@@ -66,9 +63,10 @@ public class BookManager {
         }
     }
     public List<BookDTO> sortedBookList(int type) {
-        java.util.Comparator[] comparators = {new AscBookNo(), new DescBookNo(), new AscBookTitle(), new DescBookTItle()};
+        java.util.Comparator[] comparators = {new AscBookNo(), new DescBookNo(), new AscBookTitle(), new DescBookTitle()};
         java.util.Comparator comparator = comparators[type-1];
         Collections.sort(booklist, comparator);
+
         return booklist;
     }
 
