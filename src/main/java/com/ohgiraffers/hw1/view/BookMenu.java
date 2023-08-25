@@ -17,29 +17,29 @@ public class BookMenu {
 
     public void mainMenu() {
 
-    do {
-        System.out.println("*** 도서 관리 프로그램 ***");
-        System.out.println("1. 새 도서 추가");
-        System.out.println("2. 도서정보 정렬 후 출력");
-        System.out.println("3. 도서 삭제");
-        System.out.println("4. 도서 검색출력");
-        System.out.println("5. 전체 출력");
-        System.out.println("6. 끝내기");
+        do {
+            System.out.println("*** 도서 관리 프로그램 ***");
+            System.out.println("1. 새 도서 추가");
+            System.out.println("2. 도서정보 정렬 후 출력");
+            System.out.println("3. 도서 삭제");
+            System.out.println("4. 도서 검색출력");
+            System.out.println("5. 전체 출력");
+            System.out.println("6. 끝내기");
 
-        int select = sc.nextInt();
+            int select = sc.nextInt();
 
-        switch (select) {
-            case 1 : bm.addBook(inputBook()); break;
-            case 2 : bm.printBookList(selectSortedBook()); break;
-            case 3 : bm.deleteBook(inputBookNo()); break;
-            case 4 : bm.searchBook(inputBookTitle()); break;
-            case 5 : bm.displayAll(); break;
-            case 6 : System.out.println("프로그램을 종료합니다."); return;
-            default : System.out.println("잘못 입력하셨습니다.");
-        }
+            switch (select) {
+                case 1 : bm.addBook(inputBook()); break;
+                case 2 : bm.printBookList(selectSortedBook()); break;
+                case 3 : bm.deleteBook(inputBookNo()); break;
+                case 4 : bm.searchBook(inputBookTitle()); break;
+                case 5 : bm.displayAll(); break;
+                case 6 : System.out.println("프로그램을 종료합니다."); return;
+                default : System.out.println("잘못 입력하셨습니다.");
+            }
 
-    }while (true);
-}
+        }while (true);
+    }
 
     public BookDTO inputBook() {
 
@@ -74,7 +74,10 @@ public class BookMenu {
     public String inputBookTitle() {
 
         System.out.print("도서 제목 : ");
+        sc.nextLine();
         String btitle = sc.nextLine();
+
+        System.out.println("inputBookTitle btitle : " + btitle);
 
         return btitle;
     }
